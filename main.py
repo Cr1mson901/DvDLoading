@@ -8,6 +8,8 @@ import win32api
 import win32con
 import win32gui
 
+from pynput import keyboard
+
 
 #Size of the image
 w, h = 140, 140
@@ -48,12 +50,26 @@ game_window = gw.getWindowsWithTitle(title)[0]
 #X and Y incrementors
 x_inc = speed
 y_inc = speed
+
+#Global listener for when a key is pressed
+def on_press(key):
+    global running
+    try:
+        if key.char == '|':
+            running = False
+    except AttributeError:
+        pass
+
+# Start listening for key presses
+listener = keyboard.Listener(on_press=on_press)
+listener.start()
+
 while running:
     # py.QUIT event means the user clicked X to close your window
     for event in py.event.get():
         if event.type == py.QUIT:
-            running = False
-    
+            running = False    
+
     #Checks if the Image is by the edge of the screen
     if not 0 < y < screen_full_size[1] - h:
         y_inc *= -1
