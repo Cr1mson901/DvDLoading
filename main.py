@@ -27,13 +27,17 @@ blue_dvd = py.transform.scale(blue_dvd,(w,h))
 
 # Getting information of the current active window
 hwnd = py.display.get_wm_info()["window"]
-#Setting the background to transparent
-win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, win32gui.GetWindowLong(
-                       hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
 
+
+# Set the window style to layered and tool window (not showing in the taskbar)
+style = win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE)
+style |= win32con.WS_EX_LAYERED | win32con.WS_EX_TOPMOST | win32con.WS_EX_TOOLWINDOW
+win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, style)
+
+#Sets the window to be transparent
 win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(0, 0, 0), 0, win32con.LWA_COLORKEY)
 
-
+#Retrieves the resolution of the screen
 screen_full_size = py.display.list_modes()[0]
 x, y = screen_full_size[0]/2, screen_full_size[1]/2
 
