@@ -7,13 +7,15 @@ import pygetwindow as gw
 import win32api
 import win32con
 import win32gui
-
+#Needed for exit key
 from pynput import keyboard
 
 
 #Size of the image
 w, h = 140, 140
 speed = 2
+#Escape key for program
+key = "|"
 
 # pygame setup
 py.init()
@@ -55,7 +57,7 @@ y_inc = speed
 def on_press(key):
     global running
     try:
-        if key.char == '|':
+        if key.char == key:
             running = False
     except AttributeError:
         pass
