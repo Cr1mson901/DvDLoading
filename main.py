@@ -10,6 +10,7 @@ import win32gui
 #Needed for exit key
 from pynput import keyboard
 
+import random
 
 #Size of the image
 w, h = 140, 140
@@ -25,9 +26,15 @@ py.display.set_caption("DvD_Logo")
 clock = py.time.Clock()
 running = True
 
-#Loads the logo in transparent mode
-blue_dvd = py.image.load('./blueDvD.png').convert_alpha()
-blue_dvd = py.transform.scale(blue_dvd,(w,h))
+colors = ['red','yellow','blue','pink','green','orange']
+
+#Loads the logos in transparent mode
+dvds = []
+for color in colors:
+    dvds.append(py.transform.scale(py.image.load(f'./{color}DvD.png').convert_alpha(),(w,h)))
+
+dvd = random.choice(dvds)
+
 
 # Getting information of the current active window
 hwnd = py.display.get_wm_info()["window"]
@@ -75,9 +82,10 @@ while running:
     #Checks if the Image is by the edge of the screen
     if not 0 < y < screen_full_size[1] - h:
         y_inc = y_inc * -1
+        dvd = random.choice([i for i in dvds if i != dvd])
     if not 0 < x < screen_full_size[0] - w:
         x_inc = x_inc * -1
-    
+        dvd = random.choice([i for i in dvds if i != dvd])
     #Increments and moves the screen
     y += y_inc
     x += x_inc
@@ -91,7 +99,7 @@ while running:
     screen.fill((0,0,0))
 
     #Adds the dvd logo to the screen
-    screen.blit(blue_dvd,(0,0)) 
+    screen.blit(dvd,(0,0)) 
 
     # flip() the display to put your work on screen
     py.display.flip()
