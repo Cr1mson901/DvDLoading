@@ -15,7 +15,7 @@ from pynput import keyboard
 w, h = 140, 140
 speed = 2
 #Escape key for program
-key = "|"
+exit_key = '|'
 
 # pygame setup
 py.init()
@@ -57,7 +57,7 @@ y_inc = speed
 def on_press(key):
     global running
     try:
-        if key.char == key:
+        if key.char == exit_key:
             running = False
     except AttributeError:
         pass
