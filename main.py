@@ -13,7 +13,7 @@ from pynput import keyboard
 
 #Size of the image
 w, h = 140, 140
-speed = 2
+speed = 5
 #Escape key for program
 exit_key = '|'
 
@@ -74,9 +74,9 @@ while running:
 
     #Checks if the Image is by the edge of the screen
     if not 0 < y < screen_full_size[1] - h:
-        y_inc *= -1
+        y_inc = y_inc * -1
     if not 0 < x < screen_full_size[0] - w:
-        x_inc *= -1
+        x_inc = x_inc * -1
     
     #Increments and moves the screen
     y += y_inc
