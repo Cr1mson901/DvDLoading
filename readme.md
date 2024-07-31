@@ -5,4 +5,4 @@ Dependencies
   -Pynput (pip install Pynput)  
 
 Exit Key Default  
-  -|
+  -"|"
