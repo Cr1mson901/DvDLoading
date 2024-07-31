@@ -31,7 +31,7 @@ colors = ['red','yellow','blue','pink','green','orange']
 #Loads the logos in transparent mode
 dvds = []
 for color in colors:
-    dvds.append(py.transform.scale(py.image.load(f'./{color}DvD.png').convert_alpha(),(w,h)))
+    dvds.append(py.transform.scale(py.image.load(f'./logos/{color}DvD.png').convert_alpha(),(w,h)))
 
 dvd = random.choice(dvds)
 
