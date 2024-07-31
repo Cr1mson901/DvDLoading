@@ -12,11 +12,15 @@ from pynput import keyboard
 
 import random
 
-#Size of the image
-w, h = 140, 140
-speed = 5
-#Escape key for program
-exit_key = '|'
+
+with open("config.txt", "r") as c:
+    colors = c.readline().split("=")[1].strip().split(",")
+    exit_key = c.readline().split("=")[1].strip()
+    dimensions = list(map(int, c.readline().split("=")[1].strip().split(",")))
+    speed = int(c.readline().split("=")[1].strip())
+
+w, h = dimensions[0], dimensions[1]
+
 
 # pygame setup
 py.init()
@@ -25,8 +29,6 @@ screen = py.display.set_mode((w, h), py.NOFRAME)
 py.display.set_caption("DvD_Logo")
 clock = py.time.Clock()
 running = True
-
-colors = ['red','yellow','blue','pink','green','orange']
 
 #Loads the logos in transparent mode
 dvds = []

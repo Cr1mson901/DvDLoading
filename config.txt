@@ -1,0 +1,4 @@
+colors=red,yellow,blue,pink,green,orange
+exit_key=|
+dimensions=140, 140
+speed=5
