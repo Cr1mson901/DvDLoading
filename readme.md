@@ -1,4 +1,6 @@
-![Alt Text](https://i.sstatic.net/Y3SkO.gif=250,250)
+<p align="center">
+  <img src="https://i.sstatic.net/Y3SkO.gif" alt="animated" />
+</p>
 
 <h1>Default Escape Key</h1>
   -"|"
