@@ -6,3 +6,5 @@ Dependencies
 
 Exit Key Default  
   -"|"
+
+[.EXE Download Link](https://downgit.github.io/#/home?url=https://github.com/Cr1mson901/DvDLoading/tree/main/Loading)
