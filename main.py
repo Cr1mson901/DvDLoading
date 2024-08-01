@@ -51,7 +51,7 @@ win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE, style)
 win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(0, 0, 0), 0, win32con.LWA_COLORKEY)
 
 #Retrieves the resolution of the screen
-screen_full_size = py.display.list_modes()[0]
+screen_full_size =  py.display.get_desktop_sizes()[0]
 #Places the logo randomly near the center of the screen
 x, y = screen_full_size[0]/2 + random.randint(-250,250), screen_full_size[1]/2 + random.randint(-250,250)
 
