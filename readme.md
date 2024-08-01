@@ -1,10 +1,6 @@
-Dependencies  
-  -Pygame (pip install Pygame)  
-  -Pygetwindow (pip install Pygetwindow)  
-  -Pywin32 (pip install Pywin32)  
-  -Pynput (pip install Pynput)  
+![Alt Text](https://i.sstatic.net/Y3SkO.gif=250,250)
 
-Exit Key Default  
+<h1>Default Escape Key</h1>
   -"|"
-
-[.EXE Download Link](https://downgit.github.io/#/home?url=https://github.com/Cr1mson901/DvDLoading/tree/main/Loading)
+<h2>Downloads</h2>  
+<a href=https://downgit.github.io/#/home?url=https://github.com/Cr1mson901/DvDLoading/tree/main/Loading>Executable Zip</a>
